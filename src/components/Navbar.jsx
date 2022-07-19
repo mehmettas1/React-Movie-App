@@ -1,25 +1,39 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
-  const currentUser = {displayName:"feliz franko"}
-  // const currentUser = false
+  const navigate = useNavigate();
+  // const currentUser = { displayName: 'felix franko' };
+  const currentUser = false;
   return (
     <div>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
-          <Link to ={"/"} className = "navbar-brand text-white">
+          <Link to="/" className="navbar-brand text-white">
             <h4>React Movie App</h4>
           </Link>
-          <div className="d-flex text-white align-items-center">
+          <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-              <h5 className="mb-0 text-capitalize">{currentUser.displayName}</h5>
-              <button className="ms-2 btn btn-outline-light">Logout</button>
+                <h5 className="mb-0 text-capitalize">
+                  {currentUser.displayName}
+                </h5>
+                <button className="ms-2 btn btn-outline-light">Logout</button>
               </>
-            ): (
+            ) : (
               <>
-              <button className="ms-2 btn btn-outline-light">Login</button>
-              <button className="ms-2 btn btn-outline-light">Register</button>
+                <button
+                  className="ms-2 btn btn-outline-light"
+                  onClick={() => navigate('/login')}
+                >
+                  Login
+                </button>
+                <button
+                  className="ms-2 btn btn-outline-light"
+                  onClick={() => navigate('/register')}
+                >
+                  Register
+                </button>
               </>
             )}
           </div>
