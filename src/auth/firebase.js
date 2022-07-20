@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD0olJuGs4q9bHJ7YnhXaa59Aul7VPPB88",
-    authDomain: "movi-app-38713.firebaseapp.com",
-    projectId: "movi-app-38713",
-    storageBucket: "movi-app-38713.appspot.com",
-    messagingSenderId: "244835329199",
-    appId: "1:244835329199:web:9a9c4eb5db474b77ace05a"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
   };
 
 // Initialize Firebase
